@@ -1,0 +1,122 @@
+import random
+f = open('foo.txt', 'w+')
+for i in range(100000):
+    f.write(str(random.randint(1, 100)) + '\n')
+
+f.seek(0)
+print(f.read())
+f.close()
+
+
+
+def read_file():
+    L = []
+    try:
+        f = open("E:/input.txt", "rt")
+        while True:
+            s = f.readline()
+            if not s:
+                f.close()
+                return L
+            s = s.rstrip()
+            L.append(s)
+    except IOError:
+        print("Open Error.")
+
+
+def print_file(L):
+    print(L)
+    for id, s in enumerate(L, 1):
+        print("第{}行： {}".format(id, s))
+
+
+def main():
+    # test 1
+    # write_file(iuput_L())
+    # test 2:
+    print_file(read_file())
+
+
+main()
+
+
+
+
+
+
+
+
+class Temperature:
+    def __init__(self, tem):
+        self.tem = tem
+
+    def ToFahrenheit(self):
+        fahrenheit = self.tem + 32
+        print('摄氏温度 = {0:1.1f}， 华氏温度 = {1:1.2f}'.format(self.tem, fahrenheit))
+
+    def ToCelsius(self):
+        celsius = (self.tem - 32) / 1.8
+        print('华氏温度 = {0:1.1f}， 摄氏温度 = {1:1.2f}'.format(self.tem, celsius))
+
+
+T1 = int(input("请输入摄氏温度："))
+temperturel = Temperature(T1)
+temperturel.ToFahrenheit()
+
+import math
+
+
+class MyMath:
+    def __init__(self, x):
+        self.x = x
+
+    def area(self):
+        print("ass")
+        pass
+
+    def Length(self):
+        pass
+
+    def vast(self):
+        pass
+
+
+class Circle(MyMath):
+    def __init__(self, r):
+        MyMath.__init__(self, r)
+
+    def area(self):
+        Area = math.pi * (self.x ** 2)
+        print("圆的面积 = {0:1.2f}".format(Area))
+        return Area
+
+    def Length(self):
+        lengths = math.pi * (self.x * 2)
+        print("圆的周长 = {0:1.2f}".format(lengths))
+        return lengths
+
+
+class Ball(MyMath):
+    def __init__(self, r):
+        MyMath.__init__(self, r)
+
+    def area(self):
+        Area = 4 * math.pi * (self.x ** 2)
+        print("球的表面积 = {0:1.2f}".format(Area))
+        #return Area
+
+    def vact(self):
+        V = (4 / 3) * math.pi * (self.x ** 3)
+        print("球的体积 = {0:1.2f}".format(V))
+        #return V
+
+
+basketball = Ball(2)
+basketball.area()
+
+
+
+
+
+
+
