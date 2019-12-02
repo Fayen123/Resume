@@ -1,0 +1,2 @@
+以下是keras官网对函数型搭建网络方法的讲解，还请一并发给各位同学
+https://keras.io/getting-started/functional-api-guide/
